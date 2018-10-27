@@ -1,0 +1,25 @@
+{
+  "name": "data-life-domains",
+  "version": "1.0.0-pre",
+  "description": "A project generated from aunty's react app template.",
+  "license": "MIT",
+  "private": true,
+  "contributors": [
+    "Simon Elvery <simon@elvery.net>"
+  ],
+  "aunty": {
+    "type": "react"
+  },
+  "scripts": {
+    "start": "aunty serve",
+    "test": "aunty test"
+  },
+  "devDependencies": {
+    "@abcnews/aunty": "^9.8.1",
+    "react-test-renderer": "^16.6.0"
+  },
+  "dependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  }
+}
