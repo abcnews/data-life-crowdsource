@@ -1,15 +1,19 @@
-const React = require('react');
-const styles = require('./styles.scss');
-
-const firebase = require("firebase");
-require("firebase/firestore");
+const React = require("react");
+const styles = require("./styles.scss");
+const { Collector } = require("../DomainForm");
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   render() {
+    const { domain } = this.state;
     return (
       <div className={styles.root}>
-        <img className={styles.worm} src={worm} />
-        <h1>{this.props.projectName}</h1>
+        <h1>What do you know about ...</h1>
+        <Collector />
       </div>
     );
   }
