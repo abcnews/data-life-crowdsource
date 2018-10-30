@@ -15,7 +15,7 @@ module.exports = {
         label: `Is this tracking your internet use, location or other personal data?`
       },
       {
-        name: 'exidence',
+        name: 'evidence',
         type: 'textarea',
         label: `What evidence do you have for this?`
       }
