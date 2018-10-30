@@ -1,18 +1,15 @@
 {
-  "name": "data-life-domains",
+  "name": "data-life-crowdsource",
   "version": "1.0.0-pre",
   "description": "A project generated from aunty's react app template.",
   "license": "MIT",
   "private": true,
   "contributors": [
-    "Simon Elvery <simon@elvery.net>"
+    "Simon Elvery <simon@elvery.net>",
+    "Colin Gourlay <gourlay.colin@abc.net.au>"
   ],
-  "aunty": {
-    "type": "react"
-  },
   "scripts": {
-    "start": "aunty serve",
-    "test": "aunty test"
+    "start": "aunty serve"
   },
   "devDependencies": {
     "@abcnews/aunty": "^9.8.1",
@@ -20,6 +17,7 @@
     "react-test-renderer": "^16.6.0"
   },
   "dependencies": {
+    "firebase": "^5.5.6",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
   }

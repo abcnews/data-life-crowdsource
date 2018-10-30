@@ -1,22 +1,11 @@
-const React = require("react");
-const styles = require("./styles.scss");
-const { Collector } = require("../DomainForm");
+const React = require('react');
+const CollectionForm = require('../CollectionForm');
+const styles = require('./styles.scss');
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    const { domain } = this.state;
-    return (
-      <div className={styles.root}>
-        <h1>What do you know about ...</h1>
-        <Collector />
-      </div>
-    );
-  }
-}
+const App = ({ collection }) => (
+  <div className={styles.root}>
+    <CollectionForm collection={collection} />
+  </div>
+);
 
 module.exports = App;

@@ -1,0 +1,91 @@
+.root {
+  margin-bottom: 4rem;
+  padding: 0.25rem;
+  font-family: ABCSans;
+}
+
+.root a {
+  color: #0058cc;
+  text-decoration: none;
+}
+
+.root button {
+  display: block;
+  border: 0;
+  padding: 0.5em 0.75em;
+  background-color: #01cfff;
+  font-size: inherit;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.root button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.root form {
+  margin: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+.titleItem {
+  display: block;
+  margin: 0.25rem 0.5rem 1rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.titleItem.isLong {
+  font-size: 1rem;
+}
+
+.skip {
+  color: #666;
+  font-size: 0.875rem;
+  text-align: center;
+  line-height: 2;
+}
+
+.skip > button {
+  display: inline-block;
+  margin-left: 0.5em;
+}
+
+.field {
+  margin: 1rem 0;
+}
+
+.field > * {
+  display: block;
+  width: 100%;
+}
+
+.field > label {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.field > input[type='text'],
+.field > textarea {
+  border: 0.0625rem solid #ccc;
+  padding: 0.25rem 0.5rem;
+  font-family: ABCSans;
+  font-size: 0.875rem;
+}
+
+.field > textarea {
+  min-height: 4rem;
+}
+
+.submit > button {
+  width: 100%;
+}

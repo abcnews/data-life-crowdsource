@@ -1,44 +1,14 @@
-const functions = require("firebase-functions");
-const admin = require("firebase-admin");
+const admin = require('firebase-admin');
+const functions = require('firebase-functions');
+
 admin.initializeApp();
 
-// Keeps track of the length of the 'likes' child list in a separate property.
-exports.countAddedResponses = functions.firestore
-  .document("/{collector}/{key}/responses/{responseId}")
-  .onCreate((snapshot, context) => {
-    const keyRef = snapshot.ref.parent.parent;
-    return keyRef.firestore
-      .runTransaction(transaction => {
-        // This code may get re-run multiple times if there are conflicts.
-        return transaction.get(keyRef).then(function(doc) {
-          if (!doc.exists) {
-            transaction.set(keyRef, { count: 1 });
-          } else {
-            transaction.update(keyRef, { count: (doc.data().count || 0) + 1 });
-          }
-        });
-      })
-      .then(() => {
-        return console.log("Response added.");
-      });
-  });
+exports.countResponses = functions.firestore.document('/{collection}/{key}/responses/{responseId}').onWrite(change => {
+  const keyRef = (change.after.exists ? change.after : change.before).ref.parent.parent;
 
-exports.countRemovedResponses = functions.firestore
-  .document("/{collector}/{key}/responses/{responseId}")
-  .onDelete((snapshot, context) => {
-    const keyRef = snapshot.ref.parent.parent;
-    return keyRef.firestore
-      .runTransaction(transaction => {
-        // This code may get re-run multiple times if there are conflicts.
-        return transaction.get(keyRef).then(function(doc) {
-          if (!doc.exists) {
-            transaction.set(keyRef, { count: 0 });
-          } else {
-            transaction.update(keyRef, { count: (doc.data().count || 0) - 1 });
-          }
-        });
-      })
-      .then(() => {
-        return console.log("Response removed.");
-      });
-  });
+  return keyRef
+    .collection('responses')
+    .get()
+    .then(querySnapshot => keyRef.update({ count: querySnapshot.size }))
+    .catch(err => console.log(err));
+});
