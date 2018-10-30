@@ -1,18 +1,11 @@
 const React = require('react');
+const CollectionForm = require('../CollectionForm');
 const styles = require('./styles.scss');
 
-const firebase = require("firebase");
-require("firebase/firestore");
-
-class App extends React.Component {
-  render() {
-    return (
-      <div className={styles.root}>
-        <img className={styles.worm} src={worm} />
-        <h1>{this.props.projectName}</h1>
-      </div>
-    );
-  }
-}
+const App = ({ collection }) => (
+  <div className={styles.root}>
+    <CollectionForm collection={collection} />
+  </div>
+);
 
 module.exports = App;
