@@ -176,10 +176,26 @@ class CollectionForm extends React.Component {
           <button onClick={this.handleSkip}>{skip}</button>
         </p>
         <form onSubmit={this.handleSubmit}>
-          {fields.map(({ name, type, label }) => (
+          {fields.map(({ name, type, label, choices }) => (
             <div key={name} className={styles.field}>
-              <label htmlFor={`${name}_input`}>{label}</label>
-              {type === 'textarea' ? (
+              <label htmlFor={choices ? null : `${name}_input`}>{label}</label>
+              {choices ? (
+                <div className={styles.choices}>
+                  {choices.map((choice, index) => (
+                    <label htmlFor={`${name}_input_choice_${index}`}>
+                      <input
+                        id={`${name}_input_choice_${index}`}
+                        name={name}
+                        type="radio"
+                        value={choice}
+                        checked={response[name] === choice}
+                        onChange={this.handleInputChange}
+                      />
+                      {` ${choice}`}
+                    </label>
+                  ))}
+                </div>
+              ) : type === 'textarea' ? (
                 <textarea
                   id={`${name}_input`}
                   name={name}

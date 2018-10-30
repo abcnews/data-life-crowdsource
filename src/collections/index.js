@@ -11,7 +11,7 @@ module.exports = {
       },
       {
         name: 'is-tracking',
-        // type: 'checkbox',
+        choices: ['Yes', 'No'],
         label: `Is this tracking your internet use, location or other personal data?`
       },
       {
