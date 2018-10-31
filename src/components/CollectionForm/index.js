@@ -163,7 +163,7 @@ class CollectionForm extends React.Component {
           {title}
           {link ? (
             <a ref={this.itemTitleRef} className={titleItemClassName} target="_blank" href={link(item)}>
-              {item}
+              {`${item} 🔗`}
             </a>
           ) : (
             <span ref={this.itemTitleRef} className={titleItemClassName}>

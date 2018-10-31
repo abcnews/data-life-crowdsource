@@ -20,7 +20,7 @@ module.exports = {
         label: `What evidence do you have for this?`
       }
     ],
-    preSkip: 'Submit what you know or...',
-    skip: 'Skip this domain'
+    preSkip: 'Answer the questions below or...',
+    skip: 'Try another one'
   }
 };

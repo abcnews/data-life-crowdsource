@@ -33,7 +33,7 @@
 
 .root a {
   color: #0058cc;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .root button {
@@ -69,11 +69,12 @@
   font-size: 1.5rem;
   font-weight: 600 !important;
   letter-spacing: 0.25px;
-  white-space: nowrap;
 }
 
-.titleItem.isLong {
-  font-size: 1rem;
+@media (max-width: 40rem) {
+  .titleItem.isLong {
+    font-size: 1rem;
+  }
 }
 
 .skip {
