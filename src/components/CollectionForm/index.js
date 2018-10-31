@@ -220,8 +220,16 @@ class CollectionForm extends React.Component {
             </button>
           </div>
         </form>
-        <p class={styles.download}>
-          <a href={this.download} download={`${this.props.collection.key}.txt`}>{`Download the full list`}</a> 📄
+        <p className={styles.footnotes}>
+          {'Or '}
+          <a href={this.download} download={`${this.props.collection.key}.txt`}>
+            download the full list
+          </a>
+          {' and '}
+          <a href="mailto:datalife@abc.net.au" title="datalife@abc.net.au">
+            email Simon
+          </a>
+          {' about what you find'}
         </p>
       </div>
     );
