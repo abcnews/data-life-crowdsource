@@ -182,7 +182,7 @@ class CollectionForm extends React.Component {
               {choices ? (
                 <div className={styles.choices}>
                   {choices.map((choice, index) => (
-                    <label htmlFor={`${name}_input_choice_${index}`}>
+                    <label key={`${name}_${index}`} htmlFor={`${name}_input_choice_${index}`}>
                       <input
                         id={`${name}_input_choice_${index}`}
                         name={name}

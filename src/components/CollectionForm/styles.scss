@@ -1,7 +1,34 @@
 .root {
+  box-sizing: border-box;
   margin-bottom: 4rem;
-  padding: 0.25rem;
   font-family: ABCSans;
+}
+
+@media (max-width: 40rem) {
+  .root {
+    margin-top: 2rem;
+    border-top: 0.0625rem solid #ccc;
+    border-bottom: 0.0625rem solid #ccc;
+    padding: 1rem 0;
+  }
+}
+
+@media (min-width: 40rem) {
+  .root {
+    border: 0.0625rem solid #ccc;
+    padding: 0.5rem;
+    background-color: #fff;
+  }
+}
+
+@media (min-width: 80rem) {
+  .root {
+    padding: 1rem;
+  }
+}
+
+.root * {
+  box-sizing: inherit;
 }
 
 .root a {
@@ -31,7 +58,7 @@
 .title {
   margin: 0;
   font-size: 1.125rem;
-  font-weight: normal;
+  font-weight: normal !important;
   text-align: center;
 }
 
@@ -40,7 +67,8 @@
   margin: 0.25rem 0.5rem 1rem;
   line-height: 2rem;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 600 !important;
+  letter-spacing: 0.25px;
   white-space: nowrap;
 }
 
@@ -89,8 +117,22 @@
 .field > .choices {
 }
 
+.field > .choices > label {
+  font-size: 1rem;
+}
+
 .field > .choices > label:not(:first-child) {
   margin-left: 1rem;
+}
+
+.field > .choices > label > input {
+  position: relative;
+  top: -0.0625rem;
+  margin-right: 0.25rem;
+}
+
+.submit {
+  font-size: 1rem;
 }
 
 .submit > button {
