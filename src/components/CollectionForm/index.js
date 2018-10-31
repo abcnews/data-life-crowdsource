@@ -14,6 +14,7 @@ class CollectionForm extends React.Component {
     this.handleSkip = this.handleSkip.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
+    this.download = `data:text/plain;charset=utf-8,${encodeURIComponent(props.collection.items.join('\n'))}`;
     this.counts = {};
 
     const storedSeen = window.localStorage.getItem(`seen_${this.props.collection.key}`);
@@ -219,6 +220,9 @@ class CollectionForm extends React.Component {
             </button>
           </div>
         </form>
+        <p class={styles.download}>
+          <a href={this.download} download={`${this.props.collection.key}.txt`}>{`Download the full list`}</a> 📄
+        </p>
       </div>
     );
   }
